@@ -17,12 +17,20 @@
         1.定义容器存放虚拟dom
         2.创建虚拟dom元素
         3.把虚拟dom元素渲染到页面上
-     -->
+      -->
      <div id="root1"></div>
+     <div id="root2"></div>
      <script>
         //es5方法创建
-        var element = React.createElement('zhuang',{},'hello react')
+        //var element = React.createElement('zhuang',{},'hello react')
+        var element = React.createElement('zhuang',null ,'hello')//节点，节点属性，标签内容
         ReactDOM.render(element,document.getElementById('root1'))
+
+        //如果有多层嵌套的关系
+        var zhuang1 = React.createElement('zhuang',null,'111')
+        var zhuang2 = React.createElement('zhuang',{className:'react'},'2222')
+        var _ul = React.createElement('ul',{id:'list'},zhuang1,zhuang2)
+        ReactDOM.render(_ul,document.getElementById('root2'))
      </script>
 </body>
 </html>
